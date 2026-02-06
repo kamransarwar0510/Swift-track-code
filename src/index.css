@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swift Track Carrier - Logistics Design System */
+
+@layer base {
+  :root {
+    /* Navy blue primary for professional logistics feel */
+    --background: 0 0% 100%;
+    --foreground: 213 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 50% 10%;
+
+    /* Deep navy blue - main brand color */
+    --primary: 213 60% 15%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Vibrant red/coral for CTAs and accents */
+    --secondary: 0 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 213 20% 95%;
+    --muted-foreground: 213 20% 45%;
+
+    /* Light blue accent */
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 20% 90%;
+    --input: 213 20% 90%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.5rem;
+
+    /* Service card colors */
+    --service-card: 0 85% 60%;
+    --service-card-foreground: 0 0% 100%;
+
+    /* Hero overlay */
+    --hero-overlay: 213 60% 15%;
+  }
+
+  .dark {
+    --background: 213 60% 8%;
+    --foreground: 0 0% 98%;
+    --card: 213 50% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 213 50% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 213 30% 20%;
+    --muted-foreground: 213 20% 70%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 213 30% 25%;
+    --input: 213 30% 25%;
+    --ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(
+      to right,
+      hsl(var(--hero-overlay) / 0.9) 0%,
+      hsl(var(--hero-overlay) / 0.7) 50%,
+      hsl(var(--hero-overlay) / 0.4) 100%
+    );
+  }
+
+  .service-card-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--service-card)) 0%,
+      hsl(0 75% 55%) 100%
+    );
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-foreground/80 hover:text-accent transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
